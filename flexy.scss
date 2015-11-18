@@ -1,0 +1,148 @@
+/*
+-- flexy.scss
+-- by Luke Jackson 2015
+--
+-- Built on top of Eric Meyer's reset.css
+-- Intended as a minimal, mostly structural library
+-- Relies on flexbox and viewport units
+*/
+
+@font-face {
+  font-family: "MacSystem";
+  src:
+    local(".HelveticaNeueDeskInterface-Regular"),
+    local(".LucidaGrandeUI");
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: "MacSystem", sans-serif;
+  font-size: calc(1vmin + 9px);
+}
+
+body {
+  position: relative;
+  min-width: 320px; width: 100vw;
+  min-height: 320px; height: 100vh;
+  > * {
+    width: 100% !important;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+// ------------------------------------------
+// Containers
+// ------------------------------------------
+
+c-,
+x-,
+xx-,
+y- {
+  display: flex;
+}
+
+c-,
+y- {
+  flex-direction: column
+}
+
+c- {
+  min-height: 100vh;
+  > *:only-child { margin: auto; }
+}
+
+x- {
+  flex-direction: row;
+  > :not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+y- > :not(:first-child)  {
+  margin-top: 1rem;
+}
+
+xx- {
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding: 1rem 0 0 1rem;
+  > * { margin: 0 1rem 1rem 0; }
+}
+
+// ------------------------------------------
+// Items
+// ------------------------------------------
+
+i- {
+  list-style: none;
+  min-width: 1rem;
+  min-height: 1rem;
+  overflow: hidden;
+}
+
+[compact] {
+  padding: 0;
+  > :not(:first-child) {
+    margin: 0;
+  }
+}
+
+// ------------------------------------------
+// Content
+// ------------------------------------------
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+span {
+  display: block;
+  line-height: 138%;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.62rem; }
+h3 { font-size: 1.38rem; }
+
+p {
+  font-size: 1rem;
+  max-width: 70ex;
+  min-width: 30ex;
+}
+
+span {
+  font-size: 0.62rem;
+  max-width: 70ex;
+}
+
+label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ------------------------------------------
+// Interfaces
+// ------------------------------------------
+
+input[type='text'],
+input[type='number'],
+input[type='password'] {
+  display: block;
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  outline: none;
+}
+
+button {
+  @extend input[type='text'];
+}
