@@ -2,6 +2,8 @@
 
 A CSS reset with some custom generic elements that can be used when prototyping and developing web sites or apps. A mostly structural library that takes advantage of `flexbox` and viewport units such as `vw`, `vh`, `vmin` and `vmax` to ease the pain of designing responsive layouts for various screen sizes and resolutions.
 
+Here is a demo: http://codepen.io/lukejacksonn/pen/zvbPGb
+
 ### Disclaimer
 
 Some of the practices and patterns used in this project are quite progressive. There are a few hard dependencies on certain css properties that not all browsers support (namely <IE10). Although fundamentally simple.. some of the techniques employed here require the developer to think a little differently about page layout than perhaps they might have traditionally. 
